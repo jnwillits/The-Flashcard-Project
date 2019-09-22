@@ -1,0 +1,12 @@
+card*.*
+__pycache__
+.vscode
+archive
+build
+dist
+venv
+LICENSE.txt
+tes*.*
+*.docx
+*.tmp
+*xlsx
