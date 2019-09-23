@@ -29,5 +29,5 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False, icon='cards.ico')
+          console=False, icon='fpicon_64.ico')
  

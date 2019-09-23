@@ -4,7 +4,7 @@
 The Flashcard Project
 Copyright (c) 2019 (MIT License) Jeffrey Neil Willits   @jnwillits
 
-Use this to build a flash card learning deck. Edit the cards as you learn. The "next" (green arrow) button can be set to either randomly or sequentially show display the cards. Click "Archive", if you do not want to see a card again and to do not want to delete it from the database. See the README file for more.
+Use this to build a flash card learning deck. Edit the cards as you learn. The "next" (green arrow) button can be set to either randomly or sequentially display the cards. Click "Archive", if you do not want to see a card again and to do not want to delete it from the database. See the README file for more.
 
 """
 
@@ -17,7 +17,7 @@ from random import choice, randrange
 
 import wx
 
-import theflashcardprojectgui as tfp
+import theflashcardprojectgui as fp
 import fphelp
 
 
@@ -120,9 +120,9 @@ def write_db(cards):
         pickle.dump(cards, f)
 
 
-class EditTags(tfp.Dialog_edit_tags):
+class EditTags(fp.Dialog_edit_tags):
     def __init__(self, parent):
-        tfp.Dialog_edit_tags.__init__(self, parent)
+        fp.Dialog_edit_tags.__init__(self, parent)
 
         self.card = getattr(frame, 'card')
         self.staticText_card_label.SetLabel(f'Card: {add_zeros(self.card)}')
@@ -142,9 +142,9 @@ class EditTags(tfp.Dialog_edit_tags):
         self.Close()
 
 
-class DeleteTags(tfp.Dialog_delete_tags):
+class DeleteTags(fp.Dialog_delete_tags):
     def __init__(self, parent):
-        tfp.Dialog_delete_tags.__init__(self, parent)
+        fp.Dialog_delete_tags.__init__(self, parent)
 
         self.tags_temp = sorted(list(tags))
         self.listBox_delete_tags.Set(self.tags_temp)
@@ -168,9 +168,9 @@ class DeleteTags(tfp.Dialog_delete_tags):
         self.Close()
 
 
-class ExcludeTags(tfp.Dialog_exclude_tags):
+class ExcludeTags(fp.Dialog_exclude_tags):
     def __init__(self, parent):
-        tfp.Dialog_exclude_tags.__init__(self, parent)
+        fp.Dialog_exclude_tags.__init__(self, parent)
 
         self.tags_temp = sorted(list(tags))
         self.listBox_exclude_tags.Set(self.tags_temp)
@@ -186,9 +186,9 @@ class ExcludeTags(tfp.Dialog_exclude_tags):
         self.Close()
 
 
-class CardAppearance(tfp.Dialog_font_size):
+class CardAppearance(fp.Dialog_font_size):
     def __init__(self, parent):
-        tfp.Dialog_font_size.__init__(self, parent)
+        fp.Dialog_font_size.__init__(self, parent)
 
     def on_button_close(self, event):
         font_sizes = ['9', '10', '11', '12',
@@ -204,9 +204,9 @@ class CardAppearance(tfp.Dialog_font_size):
         setattr(frame, 'update_ui', True)
 
 
-class SequenceSetup(tfp.Dialog_view_order):
+class SequenceSetup(fp.Dialog_view_order):
     def __init__(self, parent):
-        tfp.Dialog_view_order.__init__(self, parent)
+        fp.Dialog_view_order.__init__(self, parent)
 
     def on_check_random(self, event):
         setattr(frame, 'random_view', True)
@@ -217,13 +217,12 @@ class SequenceSetup(tfp.Dialog_view_order):
         self.checkBox_random.SetValue(False)
         setattr(frame, 'card', 0)
         frame.next_card()
+    # PUT A CLOSE BUTTON ON THIS.....................
 
-    # PUT A CLOSE BUTTON ON THIS.....................    
 
-
-class HelpAbout(tfp.Dialog_about):
+class HelpAbout(fp.Dialog_about):
     def __init__(self, parent):
-        tfp.Dialog_about.__init__(self, parent)
+        fp.Dialog_about.__init__(self, parent)
 
         self.font_size = 9
 
@@ -235,9 +234,9 @@ class HelpAbout(tfp.Dialog_about):
         self.Close()
 
 
-class HelpUsage(tfp.Dialog_usage):
+class HelpUsage(fp.Dialog_usage):
     def __init__(self, parent):
-        tfp.Dialog_usage.__init__(self, parent)
+        fp.Dialog_usage.__init__(self, parent)
 
         self.font_size = 9
 
@@ -249,9 +248,9 @@ class HelpUsage(tfp.Dialog_usage):
         self.Close()
 
 
-class Interface(tfp.MainFrame):
+class Interface(fp.MainFrame):
     def __init__(self, parent):
-        tfp.MainFrame.__init__(self, parent)
+        fp.MainFrame.__init__(self, parent)
 
         self.card = 1
         self.last_card = int()
@@ -392,7 +391,6 @@ class Interface(tfp.MainFrame):
                 wx.LogError(
                     "Cannot save current data in file '%s'." % pathname)
 
-
     def import_and_merge_yaml(self):
         # global card_file
         global tags
@@ -425,17 +423,15 @@ class Interface(tfp.MainFrame):
                 card_values.extend(imported_card_values)
                 cards_temp = {}
                 for i in range(len(card_values)):
-                    cards_temp.update({i + 1: card_values[i]})   
+                    cards_temp.update({i + 1: card_values[i]})
                 self.cards = cards_temp
                 # Populate the tags set.
                 for key in self.cards:
                     tags = tags.union(self.cards[key][3])
             except IOError:
                 wx.LogError("Cannot open file '%s'." % newfile)
-            # NECESSARY?.....................    
+            # NECESSARY?.....................
             self.next_card()
-
-
 
     def on_menu_export_yaml(self, event):
         self.export('YAML', 'yaml')
@@ -479,8 +475,6 @@ class Interface(tfp.MainFrame):
 if __name__ == '__main__':
     app = wx.App(False)
     frame = Interface(None)
-    # frame.SetIcon(wx.Icon(resource_path('cards.ico')))
-    frame.SetIcon(wx.Icon(resource_path('fpicon.png')))
-    # frame.SetIcon(wx.Icon('cards.ico'))
+    frame.SetIcon(wx.Icon(resource_path('fpicon_64.ico')))
     frame.Show(True)
     app.MainLoop()

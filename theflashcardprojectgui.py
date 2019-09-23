@@ -342,12 +342,11 @@ class Dialog_usage ( wx.Dialog ):
 
 		bSizer3011 = wx.BoxSizer( wx.VERTICAL )
 
-		bSizer3011.SetMinSize( wx.Size( -1,20 ) )
-		self.bitmap_fpicon = wx.StaticBitmap( self.m_panel2, wx.ID_ANY, wx.Bitmap( u"fpicon.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		bSizer3011.Add( self.bitmap_fpicon, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		self.bitmap_fpicon = wx.StaticBitmap( self.m_panel2, wx.ID_ANY, wx.Bitmap( u"fpicon_64.ico", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		bSizer3011.Add( self.bitmap_fpicon, 0, wx.ALIGN_CENTER_HORIZONTAL, 15 )
 
 
-		bSizer27.Add( bSizer3011, 0, wx.EXPAND, 5 )
+		bSizer27.Add( bSizer3011, 0, wx.ALIGN_CENTER_HORIZONTAL, 15 )
 
 		bSizer302 = wx.BoxSizer( wx.VERTICAL )
 
@@ -359,7 +358,7 @@ class Dialog_usage ( wx.Dialog ):
 		self.staticText_usage.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_GRAYTEXT ) )
 		self.staticText_usage.SetMinSize( wx.Size( -1,100 ) )
 
-		bSizer302.Add( self.staticText_usage, 0, wx.ALIGN_CENTER_HORIZONTAL, 0 )
+		bSizer302.Add( self.staticText_usage, 0, wx.ALIGN_CENTER_HORIZONTAL, 15 )
 
 
 		bSizer27.Add( bSizer302, 0, wx.EXPAND, 0 )
@@ -435,7 +434,7 @@ class Dialog_about ( wx.Dialog ):
 
 		self.staticText_about.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 
-		bSizer301.Add( self.staticText_about, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 25 )
+		bSizer301.Add( self.staticText_about, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 25 )
 
 
 		bSizer27.Add( bSizer301, 0, wx.EXPAND, 5 )
@@ -443,8 +442,8 @@ class Dialog_about ( wx.Dialog ):
 		bSizer3011 = wx.BoxSizer( wx.VERTICAL )
 
 		bSizer3011.SetMinSize( wx.Size( -1,20 ) )
-		self.bitmap_fpicon = wx.StaticBitmap( self.m_panel2, wx.ID_ANY, wx.Bitmap( u"fpicon.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		bSizer3011.Add( self.bitmap_fpicon, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		self.bitmap_fpicon = wx.StaticBitmap( self.m_panel2, wx.ID_ANY, wx.Bitmap( u"fpicon_64.ico", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		bSizer3011.Add( self.bitmap_fpicon, 0, wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 
 		bSizer27.Add( bSizer3011, 0, wx.EXPAND, 5 )
