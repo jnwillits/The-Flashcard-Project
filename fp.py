@@ -215,6 +215,10 @@ class SequenceSetup(tfp.Dialog_view_order):
     def on_check_sequential(self, event):
         setattr(frame, 'random_view', False)
         self.checkBox_random.SetValue(False)
+        setattr(frame, 'card', 0)
+        frame.next_card()
+
+    # PUT A CLOSE BUTTON ON THIS.....................    
 
 
 class HelpAbout(tfp.Dialog_about):
@@ -388,8 +392,56 @@ class Interface(tfp.MainFrame):
                 wx.LogError(
                     "Cannot save current data in file '%s'." % pathname)
 
+
+    def import_and_merge_yaml(self):
+        # global card_file
+        global tags
+        with wx.FileDialog(self, "Import and merge a YAML card file...", wildcard="YAML files (*.yaml)|*.yaml",
+                           style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST) as fileDialog:
+            if fileDialog.ShowModal() == wx.ID_CANCEL:
+                return
+            card_file = fileDialog.GetPath()
+            try:
+                cards_temp = self.cards
+                # REFACTOR READ() TO ALLOW IT TO WORK HERE...........
+                card_path = ''
+                if os.path.exists(card_file):
+                    card_path = Path.cwd() / card_file
+                if os.path.isfile(card_path):
+                    with open(card_path, 'r') as f:
+                        # cards = yaml.load(f)
+                        imported_cards = yaml.load(f, Loader=yaml.SafeLoader)
+                else:
+                    # BETTER A MESSAGE....................
+                    # AND RESETTING CARDS SHOULD NOT BE NECESSARY......
+                    cards = set_card(1, 'active')
+                # Imported card keys must be changed so they do not match.
+                card_values = []
+                imported_card_values = []
+                for i in range(len(cards_temp)):
+                    card_values.append(cards_temp[i + 1])
+                for i in range(len(imported_cards)):
+                    imported_card_values.append(imported_cards[i + 1])
+                card_values.extend(imported_card_values)
+                cards_temp = {}
+                for i in range(len(card_values)):
+                    cards_temp.update({i + 1: card_values[i]})   
+                self.cards = cards_temp
+                # Populate the tags set.
+                for key in self.cards:
+                    tags = tags.union(self.cards[key][3])
+            except IOError:
+                wx.LogError("Cannot open file '%s'." % newfile)
+            # NECESSARY?.....................    
+            self.next_card()
+
+
+
     def on_menu_export_yaml(self, event):
         self.export('YAML', 'yaml')
+
+    def on_menu_import_yaml(self, event):
+        self.import_and_merge_yaml()
 
     def on_menu_view(self, event):
         dlg = SequenceSetup(None)
@@ -427,7 +479,8 @@ class Interface(tfp.MainFrame):
 if __name__ == '__main__':
     app = wx.App(False)
     frame = Interface(None)
-    frame.SetIcon(wx.Icon(resource_path('cards.ico')))
+    # frame.SetIcon(wx.Icon(resource_path('cards.ico')))
+    frame.SetIcon(wx.Icon(resource_path('fpicon.png')))
     # frame.SetIcon(wx.Icon('cards.ico'))
     frame.Show(True)
     app.MainLoop()

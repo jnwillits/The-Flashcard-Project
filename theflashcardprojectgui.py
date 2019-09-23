@@ -228,7 +228,7 @@ class MainFrame ( wx.Frame ):
 		self.Bind( wx.EVT_MENU, self.on_menu_new_file, id = self.menu_new.GetId() )
 		self.Bind( wx.EVT_MENU, self.on_menu_open, id = self.menu_open.GetId() )
 		self.Bind( wx.EVT_MENU, self.on_menu_save_as, id = self.menu_save_as.GetId() )
-		self.Bind( wx.EVT_MENU, self.on_menu_import_YAML, id = self.menuItem_import_yaml.GetId() )
+		self.Bind( wx.EVT_MENU, self.on_menu_import_yaml, id = self.menuItem_import_yaml.GetId() )
 		self.Bind( wx.EVT_MENU, self.on_menu_export_yaml, id = self.menuItem_export_YAML.GetId() )
 		self.Bind( wx.EVT_MENU, self.on_menu_quit, id = self.menuItem_quit.GetId() )
 		self.Bind( wx.EVT_MENU, self.on_menu_edit_tags, id = self.menuItem_edit_tags.GetId() )
@@ -275,7 +275,7 @@ class MainFrame ( wx.Frame ):
 	def on_menu_save_as( self, event ):
 		event.Skip()
 
-	def on_menu_import_YAML( self, event ):
+	def on_menu_import_yaml( self, event ):
 		event.Skip()
 
 	def on_menu_export_yaml( self, event ):
@@ -310,95 +310,13 @@ class MainFrame ( wx.Frame ):
 
 
 ###########################################################################
-## Class Dialog_about
-###########################################################################
-
-class Dialog_about ( wx.Dialog ):
-
-	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"About this software...", pos = wx.DefaultPosition, size = wx.Size( 628,590 ), style = wx.DEFAULT_DIALOG_STYLE )
-
-		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
-
-		bSizer4 = wx.BoxSizer( wx.VERTICAL )
-
-		self.m_panel2 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		bSizer5 = wx.BoxSizer( wx.VERTICAL )
-
-		bSizer27 = wx.BoxSizer( wx.VERTICAL )
-
-		bSizer30 = wx.BoxSizer( wx.VERTICAL )
-
-		bSizer30.SetMinSize( wx.Size( -1,20 ) )
-		self.staticText_about = wx.StaticText( self.m_panel2, wx.ID_ANY, u"The Flashcard Project\n\nVersion 1.0\nCopyright(c) 2019 Jeffrey Neil Willits", wx.DefaultPosition, wx.Size( -1,100 ), wx.ALIGN_CENTER_HORIZONTAL )
-		self.staticText_about.Wrap( -1 )
-
-		self.staticText_about.SetFont( wx.Font( 10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
-		self.staticText_about.SetMinSize( wx.Size( -1,100 ) )
-
-		bSizer30.Add( self.staticText_about, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 25 )
-
-
-		bSizer27.Add( bSizer30, 0, wx.EXPAND, 5 )
-
-		bSizer32 = wx.BoxSizer( wx.VERTICAL )
-
-
-		bSizer27.Add( bSizer32, 0, wx.EXPAND, 5 )
-
-		bSizer40 = wx.BoxSizer( wx.VERTICAL )
-
-		self.richText_about = wx.richtext.RichTextCtrl( self.m_panel2, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_READONLY|wx.VSCROLL|wx.HSCROLL|wx.NO_BORDER|wx.WANTS_CHARS )
-		self.richText_about.SetFont( wx.Font( 12, wx.FONTFAMILY_MODERN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
-
-		bSizer40.Add( self.richText_about, 1, wx.EXPAND |wx.ALL, 5 )
-
-
-		bSizer27.Add( bSizer40, 1, wx.EXPAND, 5 )
-
-
-		bSizer5.Add( bSizer27, 1, wx.EXPAND, 5 )
-
-		bSizer7 = wx.BoxSizer( wx.VERTICAL )
-
-		self.button_about_close = wx.Button( self.m_panel2, wx.ID_ANY, u"Close", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer7.Add( self.button_about_close, 1, wx.ALL|wx.ALIGN_RIGHT, 5 )
-
-
-		bSizer5.Add( bSizer7, 0, wx.EXPAND, 5 )
-
-
-		self.m_panel2.SetSizer( bSizer5 )
-		self.m_panel2.Layout()
-		bSizer5.Fit( self.m_panel2 )
-		bSizer4.Add( self.m_panel2, 1, wx.EXPAND |wx.ALL, 5 )
-
-
-		self.SetSizer( bSizer4 )
-		self.Layout()
-
-		self.Centre( wx.BOTH )
-
-		# Connect Events
-		self.button_about_close.Bind( wx.EVT_BUTTON, self.on_button_about_close )
-
-	def __del__( self ):
-		pass
-
-
-	# Virtual event handlers, overide them in your derived class
-	def on_button_about_close( self, event ):
-		event.Skip()
-
-
-###########################################################################
 ## Class Dialog_usage
 ###########################################################################
 
 class Dialog_usage ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Using this software...", pos = wx.DefaultPosition, size = wx.Size( 628,590 ), style = wx.DEFAULT_DIALOG_STYLE )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Using this software...", pos = wx.DefaultPosition, size = wx.Size( 717,701 ), style = wx.DEFAULT_DIALOG_STYLE )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -409,24 +327,42 @@ class Dialog_usage ( wx.Dialog ):
 
 		bSizer27 = wx.BoxSizer( wx.VERTICAL )
 
-		bSizer30 = wx.BoxSizer( wx.VERTICAL )
+		bSizer301 = wx.BoxSizer( wx.VERTICAL )
 
-		bSizer30.SetMinSize( wx.Size( -1,20 ) )
-		self.staticText_usage = wx.StaticText( self.m_panel2, wx.ID_ANY, u"The Flashcard Project\n\nVersion 1.0\nCopyright(c) 2019 Jeffrey Neil Willits", wx.DefaultPosition, wx.Size( -1,100 ), wx.ALIGN_CENTER_HORIZONTAL )
+		bSizer301.SetMinSize( wx.Size( -1,20 ) )
+		self.staticText_usage = wx.StaticText( self.m_panel2, wx.ID_ANY, u"The Flashcard Project", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.staticText_usage.Wrap( -1 )
 
-		self.staticText_usage.SetFont( wx.Font( 10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+		self.staticText_usage.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+
+		bSizer301.Add( self.staticText_usage, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 25 )
+
+
+		bSizer27.Add( bSizer301, 0, wx.EXPAND, 5 )
+
+		bSizer3011 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer3011.SetMinSize( wx.Size( -1,20 ) )
+		self.bitmap_fpicon = wx.StaticBitmap( self.m_panel2, wx.ID_ANY, wx.Bitmap( u"fpicon.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		bSizer3011.Add( self.bitmap_fpicon, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+
+		bSizer27.Add( bSizer3011, 0, wx.EXPAND, 5 )
+
+		bSizer302 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer302.SetMinSize( wx.Size( -1,20 ) )
+		self.staticText_usage = wx.StaticText( self.m_panel2, wx.ID_ANY, u"Version 1.0\nCopyright(c) 2019 Jeffrey Neil Willits", wx.DefaultPosition, wx.Size( -1,100 ), wx.ALIGN_CENTER_HORIZONTAL )
+		self.staticText_usage.Wrap( -1 )
+
+		self.staticText_usage.SetFont( wx.Font( 10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.staticText_usage.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_GRAYTEXT ) )
 		self.staticText_usage.SetMinSize( wx.Size( -1,100 ) )
 
-		bSizer30.Add( self.staticText_usage, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 25 )
+		bSizer302.Add( self.staticText_usage, 0, wx.ALIGN_CENTER_HORIZONTAL, 0 )
 
 
-		bSizer27.Add( bSizer30, 0, wx.EXPAND, 5 )
-
-		bSizer32 = wx.BoxSizer( wx.VERTICAL )
-
-
-		bSizer27.Add( bSizer32, 0, wx.EXPAND, 5 )
+		bSizer27.Add( bSizer302, 0, wx.EXPAND, 0 )
 
 		bSizer40 = wx.BoxSizer( wx.VERTICAL )
 
@@ -453,7 +389,7 @@ class Dialog_usage ( wx.Dialog ):
 		self.m_panel2.SetSizer( bSizer5 )
 		self.m_panel2.Layout()
 		bSizer5.Fit( self.m_panel2 )
-		bSizer4.Add( self.m_panel2, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer4.Add( self.m_panel2, 1, wx.ALL|wx.EXPAND, 5 )
 
 
 		self.SetSizer( bSizer4 )
@@ -470,6 +406,106 @@ class Dialog_usage ( wx.Dialog ):
 
 	# Virtual event handlers, overide them in your derived class
 	def on_button_usage_close( self, event ):
+		event.Skip()
+
+
+###########################################################################
+## Class Dialog_about
+###########################################################################
+
+class Dialog_about ( wx.Dialog ):
+
+	def __init__( self, parent ):
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"About this software...", pos = wx.DefaultPosition, size = wx.Size( 717,701 ), style = wx.DEFAULT_DIALOG_STYLE )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		bSizer4 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_panel2 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer5 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer27 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer301 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer301.SetMinSize( wx.Size( -1,20 ) )
+		self.staticText_about = wx.StaticText( self.m_panel2, wx.ID_ANY, u"The Flashcard Project", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.staticText_about.Wrap( -1 )
+
+		self.staticText_about.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+
+		bSizer301.Add( self.staticText_about, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 25 )
+
+
+		bSizer27.Add( bSizer301, 0, wx.EXPAND, 5 )
+
+		bSizer3011 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer3011.SetMinSize( wx.Size( -1,20 ) )
+		self.bitmap_fpicon = wx.StaticBitmap( self.m_panel2, wx.ID_ANY, wx.Bitmap( u"fpicon.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		bSizer3011.Add( self.bitmap_fpicon, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+
+		bSizer27.Add( bSizer3011, 0, wx.EXPAND, 5 )
+
+		bSizer302 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer302.SetMinSize( wx.Size( -1,20 ) )
+		self.staticText_about = wx.StaticText( self.m_panel2, wx.ID_ANY, u"Version 1.0\nCopyright(c) 2019 Jeffrey Neil Willits", wx.DefaultPosition, wx.Size( -1,100 ), wx.ALIGN_CENTER_HORIZONTAL )
+		self.staticText_about.Wrap( -1 )
+
+		self.staticText_about.SetFont( wx.Font( 10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.staticText_about.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_GRAYTEXT ) )
+		self.staticText_about.SetMinSize( wx.Size( -1,100 ) )
+
+		bSizer302.Add( self.staticText_about, 0, wx.ALIGN_CENTER_HORIZONTAL, 0 )
+
+
+		bSizer27.Add( bSizer302, 0, wx.EXPAND, 0 )
+
+		bSizer40 = wx.BoxSizer( wx.VERTICAL )
+
+		self.richText_about = wx.richtext.RichTextCtrl( self.m_panel2, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_READONLY|wx.VSCROLL|wx.HSCROLL|wx.NO_BORDER|wx.WANTS_CHARS )
+		self.richText_about.SetFont( wx.Font( 12, wx.FONTFAMILY_MODERN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+
+		bSizer40.Add( self.richText_about, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+		bSizer27.Add( bSizer40, 1, wx.EXPAND, 5 )
+
+
+		bSizer5.Add( bSizer27, 1, wx.EXPAND, 5 )
+
+		bSizer7 = wx.BoxSizer( wx.VERTICAL )
+
+		self.button_about_close = wx.Button( self.m_panel2, wx.ID_ANY, u"Close", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer7.Add( self.button_about_close, 1, wx.ALL|wx.ALIGN_RIGHT, 5 )
+
+
+		bSizer5.Add( bSizer7, 0, wx.EXPAND, 5 )
+
+
+		self.m_panel2.SetSizer( bSizer5 )
+		self.m_panel2.Layout()
+		bSizer5.Fit( self.m_panel2 )
+		bSizer4.Add( self.m_panel2, 1, wx.ALL|wx.EXPAND, 5 )
+
+
+		self.SetSizer( bSizer4 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+		# Connect Events
+		self.button_about_close.Bind( wx.EVT_BUTTON, self.on_button_about_close )
+
+	def __del__( self ):
+		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def on_button_about_close( self, event ):
 		event.Skip()
 
 
