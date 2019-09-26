@@ -7,13 +7,18 @@ The Flashcard Project is a Windows application that simplifies making, managing,
 
 ## About the Software
 
-The native Windows interface and size-adjustable frame makes it easy to have other applications and study references displayed. This can be useful when studying a computer language so you can switch to a code editor or interpreter for testing and practice.
+This features a native Windows GUI interface so the frame is size-adjustable, making it easy to have other applications and study references displayed. This can be useful when studying a computer language so you can switch to a code editor or interpreter for testing and practice.
 
-While other flashcard applications provide extended features, this offers a simple system that allows content sharing and merging. Cards can be categorized with tags and you can save your card decks. The files can be shared for use by anyone with the software.
+While other flashcard applications provide extended features, The Flashcard Project offers a simple system that allows content sharing and merging. The files can be shared for use by anyone with the software.
+
+Cards can be categorized with tags and you can save your card decks.
+
+![The Flashcard Project Main Screen](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-tags.png?raw=true)
+
 
 ## About the Author
 
-Links and a bit more about Jeffrey Willits is available at [jnwillits.com](https://jnwillits.com/).
+Links and a bit more about Jeffrey Willits are available at [jnwillits.com](https://jnwillits.com/).
 
 ## With The Flashcard Project you can…
 
