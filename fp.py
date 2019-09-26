@@ -26,12 +26,6 @@ tags = set()
 exclude_tags = set()
 
 
-def resource_path(relative_path):
-    if hasattr(sys, '_MEIPASS'):
-        return os.path.join(sys._MEIPASS, relative_path)
-    return os.path.join(os.path.abspath("."), relative_path)
-
-
 def add_zeros(card):
     return str(['000' if card < 100 else '00'][0]) + str(card)[-5:]
 
@@ -216,8 +210,11 @@ class SequenceSetup(fp.Dialog_view_order):
         setattr(frame, 'random_view', False)
         self.checkBox_random.SetValue(False)
         setattr(frame, 'card', 0)
+        # frame.next_card()
+
+    def on_button_sequence_set(self, event):
+        self.Close()
         frame.next_card()
-    # PUT A CLOSE BUTTON ON THIS.....................
 
 
 class HelpAbout(fp.Dialog_about):
@@ -225,7 +222,6 @@ class HelpAbout(fp.Dialog_about):
         fp.Dialog_about.__init__(self, parent)
 
         self.font_size = 9
-
         font = wx.Font(self.font_size, wx.MODERN, wx.NORMAL, wx.BOLD)
         self.richText_about.SetFont(font)
         self.richText_about.AppendText(fphelp.about_text)
@@ -239,7 +235,6 @@ class HelpUsage(fp.Dialog_usage):
         fp.Dialog_usage.__init__(self, parent)
 
         self.font_size = 9
-
         font = wx.Font(self.font_size, wx.MODERN, wx.NORMAL, wx.BOLD)
         self.richText_usage.SetFont(font)
         self.richText_usage.AppendText(fphelp.usage_text)
@@ -251,6 +246,10 @@ class HelpUsage(fp.Dialog_usage):
 class Interface(fp.MainFrame):
     def __init__(self, parent):
         fp.MainFrame.__init__(self, parent)
+
+        self.path = 'fpicon_64.bmp'
+        self.icon = wx.Icon(self.path, wx.BITMAP_TYPE_BMP)
+        self.SetIcon(self.icon)
 
         self.card = 1
         self.last_card = int()
@@ -471,10 +470,13 @@ class Interface(fp.MainFrame):
         dlg = HelpUsage(None)
         dlg.Show(True)
 
+    def on_close(self, event):
+        self.Close()
+        sys.exit()
+
 
 if __name__ == '__main__':
     app = wx.App(False)
     frame = Interface(None)
-    frame.SetIcon(wx.Icon(resource_path('fpicon_64.ico')))
     frame.Show(True)
     app.MainLoop()

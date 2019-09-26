@@ -218,6 +218,7 @@ class MainFrame ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
+		self.Bind( wx.EVT_CLOSE, self.on_close )
 		self.m_panel7.Bind( wx.EVT_UPDATE_UI, self.on_update_ui )
 		self.button_add.Bind( wx.EVT_BUTTON, self.on_button_add )
 		self.button_save.Bind( wx.EVT_BUTTON, self.on_button_save )
@@ -245,6 +246,9 @@ class MainFrame ( wx.Frame ):
 
 
 	# Virtual event handlers, overide them in your derived class
+	def on_close( self, event ):
+		event.Skip()
+
 	def on_update_ui( self, event ):
 		event.Skip()
 
@@ -341,9 +345,6 @@ class Dialog_usage ( wx.Dialog ):
 		bSizer27.Add( bSizer301, 0, wx.EXPAND, 5 )
 
 		bSizer3011 = wx.BoxSizer( wx.VERTICAL )
-
-		self.bitmap_fpicon = wx.StaticBitmap( self.m_panel2, wx.ID_ANY, wx.Bitmap( u"fpicon_64.ico", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		bSizer3011.Add( self.bitmap_fpicon, 0, wx.ALIGN_CENTER_HORIZONTAL, 15 )
 
 
 		bSizer27.Add( bSizer3011, 0, wx.ALIGN_CENTER_HORIZONTAL, 15 )
@@ -442,9 +443,6 @@ class Dialog_about ( wx.Dialog ):
 		bSizer3011 = wx.BoxSizer( wx.VERTICAL )
 
 		bSizer3011.SetMinSize( wx.Size( -1,20 ) )
-		self.bitmap_fpicon = wx.StaticBitmap( self.m_panel2, wx.ID_ANY, wx.Bitmap( u"fpicon_64.ico", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		bSizer3011.Add( self.bitmap_fpicon, 0, wx.ALIGN_CENTER_HORIZONTAL, 5 )
-
 
 		bSizer27.Add( bSizer3011, 0, wx.EXPAND, 5 )
 
@@ -731,7 +729,7 @@ class Dialog_edit_tags ( wx.Dialog ):
 class Dialog_view_order ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"View cards...", pos = wx.DefaultPosition, size = wx.Size( 156,160 ), style = wx.DEFAULT_DIALOG_STYLE )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"View cards...", pos = wx.DefaultPosition, size = wx.Size( 145,168 ), style = wx.DEFAULT_DIALOG_STYLE )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -753,6 +751,14 @@ class Dialog_view_order ( wx.Dialog ):
 		bSizer24.Fit( self.m_panel2 )
 		bSizer7.Add( self.m_panel2, 1, wx.EXPAND|wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
+		bSizer37 = wx.BoxSizer( wx.VERTICAL )
+
+		self.button_set = wx.Button( self, wx.ID_ANY, u"Set", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer37.Add( self.button_set, 0, wx.ALL|wx.ALIGN_RIGHT, 10 )
+
+
+		bSizer7.Add( bSizer37, 1, wx.EXPAND|wx.ALIGN_RIGHT, 5 )
+
 
 		self.SetSizer( bSizer7 )
 		self.Layout()
@@ -762,6 +768,7 @@ class Dialog_view_order ( wx.Dialog ):
 		# Connect Events
 		self.checkBox_random.Bind( wx.EVT_CHECKBOX, self.on_check_random )
 		self.checkBox_sequential.Bind( wx.EVT_CHECKBOX, self.on_check_sequential )
+		self.button_set.Bind( wx.EVT_BUTTON, self.on_button_sequence_set )
 
 	def __del__( self ):
 		pass
@@ -772,6 +779,9 @@ class Dialog_view_order ( wx.Dialog ):
 		event.Skip()
 
 	def on_check_sequential( self, event ):
+		event.Skip()
+
+	def on_button_sequence_set( self, event ):
 		event.Skip()
 
 

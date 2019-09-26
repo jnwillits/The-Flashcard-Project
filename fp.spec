@@ -1,12 +1,12 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
-
+specpath = os.path.dirname(os.path.abspath(SPEC))
 
 a = Analysis(['fp.py'],
              pathex=['C:\\Users\\jeffw\\Documents\\code\\fp'],
              binaries=[],
-             datas=[],
+             datas=[ ('C:\\Users\\jeffw\\Documents\\code\\fp\\fpicon_64.ico', '.') ],
              hiddenimports=['wx._adv', 'wx._html'],
              hookspath=[],
              runtime_hooks=[],
@@ -15,8 +15,7 @@ a = Analysis(['fp.py'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
-pyz = PYZ(a.pure, a.zipped_data,
-             cipher=block_cipher)
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
           a.binaries,
@@ -29,5 +28,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False, icon='fpicon_64.ico')
- 
+          console=False, icon = os.path.join(specpath, 'C:\\Users\\jeffw\\Documents\\code\\fp\\fpicon_64.ico'))
