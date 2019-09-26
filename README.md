@@ -3,7 +3,7 @@
 The Flashcard Project is a Windows application that simplifies making, managing, and studying learning flashcards on a desktop. The software is written in Python.
 
 
-![The Flashcard Project Main Screen](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-screen.png?raw=true)
+![The Flashcard Project Main Screen](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-screen_1280x640.png?raw=true)
 
 ## About the Software
 
@@ -38,7 +38,7 @@ Links and a bit more about Jeffrey Willits is available at [jnwillits.com](https
 
 ## Installation
 
-Only one file is needed to use this application. Simply download the Windows executable application file [fp.exe](https://pip.pypa.io/en/stable/) and run the program.
+Only one file is needed to use this application. Simply download the Windows executable application file [fp.exe](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp.exe?raw=true) and run the program.
 
 As an alternative, you can compile the Python source code [fp.py](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/fp.py) with dependencies defined in [requirement.txt](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/requirements.txt).
 
