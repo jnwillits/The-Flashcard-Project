@@ -43,30 +43,30 @@ Links and a bit more about Jeffrey Willits are available at [jnwillits.com](http
 
 ## Installation
 
-Only one file is needed to use this application. Simply download the Windows executable application file [fp.exe](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp.exe?raw=true) and run the program.
+Only one file is needed to use this application. Simply download the Windows executable [fp.exe](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp.exe?raw=true) and run the program.
 
 As an alternative, you can compile the Python source code [fp.py](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/fp.py) with dependencies defined in [requirement.txt](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/requirements.txt).
 
 
 ## Using the Application
 
-Basic usage instructions are under the program’s Help menu.
+Basic instructions are available under the program’s Help menu.
 
-You can edit, add, and delete cards while you are studying. If there is a card you do not want to see again, click the “Archive” button. The deck can be reset at any time to return the status of all archived card to active. Otherwise, the deck will be automatically reset once all cards are viewed.
+You can edit, add, and delete cards while you are studying. If there is a card you do not want to see again, click the “Archive” button. The deck can be reset at any time to reactivate the status of archived cards. Otherwise, the deck will be automatically reset once all cards are viewed.
 
-The Flashcard Project provides a way for multiple people to contribute when generating a card deck. To share a card deck, the card data can be exported to a human-readable YAML file. These files can be shared and then imported by someone else. 
+The Flashcard Project provides a way for multiple people to contribute when generating a card deck. To share a deck, the card data can be exported to a human-readable YAML file. The file can be shared and imported by someone else to add the cards to their deck. 
 
-Use the application to help with learning for any subject. If you are an instructor your students could be tasked with producing their own flashcards and submit them as card files. Their cards can be easily consolidated into a single card deck file that is a useful learning asset for all of students. 
+Use the application to help with learning for any subject. If you are an instructor, your students could be tasked with producing their own flashcards and submit them as card files. Their cards can then be consolidated into a single card deck file that is a useful learning asset for all of your students. 
 
 
 ## Contributing
 It would be great to receive contributions to the code and documentation so pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-In addition to the software, The Flashcard Project is a curated deck of Python learning flashcards that are generated with the application. You are welome to contribute to this. The file is fp-python.db and is kept in The Flashcard Project repository.
+In addition to the software, The Flashcard Project is a curated deck of Python learning flashcards that were generated and are updated with the application. You are welome to contribute to this. The file is [fp-python.db](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp-python.db?raw=true) and is kept in The Flashcard Project repository.
 
 To submit flashcard content for Python learning, use the application to export your cards as YAML files. If any of these cards should replace existing cards, you can make a note directly on the card in all uppercase characters. Any notes will be deleted when your cards are consolidated into the master database.
 
-Most of the cards should include example code for answers. Often, a line of example of code is all that is needed. Using a python CLI makes it easy to distinguish output from code at every step. Please follow the existing format and include tags to categorize the cards.
+Most of the cards should include example code for answers. Often a line of example of code is all that is needed. Using a python CLI makes it easy to distinguish output from code at every step. Please follow the existing format and include tags to categorize the cards.
  
 
 ## License
