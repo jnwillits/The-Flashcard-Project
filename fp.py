@@ -4,7 +4,8 @@
 The Flashcard Project
 Copyright (c) 2019 (MIT License) Jeffrey Neil Willits   @jnwillits
 
-Use this to build a flash card learning deck. Edit the cards as you learn. The "next" (green arrow) button can be set to either randomly or sequentially display the cards. Click "Archive", if you do not want to see a card again and to do not want to delete it from the database. See the README file for more...
+Use this to build a flash card learning deck. Edit the cards as you learn. The Next (green arrow) button can be set to either randomly or sequentially display the cards. Click Archive, if you do not want to see a card again and you do not want to delete it from the database. See the README file in the 
+project's GitHub repository for more information.
 """
 
 import pickle
@@ -332,7 +333,11 @@ class Interface(fp.MainFrame):
         self.cards_total = get_cards_total(self.cards)
         write_db(self.cards)
         setattr(frame, 'update_ui', True)
-        self.next_card()
+        if len(self.cards[self.card][3]) > 0:
+            wx.MessageBox(f'Card {str(self.card)} is saved.')
+        else:
+            wx.MessageBox(
+                f'Card {str(self.card)} is saved. Consider adding tags.')
 
     def on_menu_new_file(self, event):
         global card_file
