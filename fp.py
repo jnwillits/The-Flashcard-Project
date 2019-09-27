@@ -4,8 +4,7 @@
 The Flashcard Project
 Copyright (c) 2019 (MIT License) Jeffrey Neil Willits   @jnwillits
 
-Use this to build a flash card learning deck. Edit the cards as you learn. The "next" (green arrow) button can be set to either randomly or sequentially display the cards. Click "Archive", if you do not want to see a card again and to do not want to delete it from the database. See the README file for more.
-
+Use this to build a flash card learning deck. Edit the cards as you learn. The "next" (green arrow) button can be set to either randomly or sequentially display the cards. Click "Archive", if you do not want to see a card again and to do not want to delete it from the database. See the README file for more...
 """
 
 import pickle
@@ -152,11 +151,9 @@ class DeleteTags(fp.Dialog_delete_tags):
         for i in range(0, len(deleted_tags_indexes)):
             deleted_tags.add(self.tags_temp[deleted_tags_indexes[i]])
         tags = tags.difference(deleted_tags)
-
         # Remove the deleted tags from the tag sets in cards.
         for key in cards:
             cards[key][3] = cards[key][3].difference(deleted_tags)
-
         setattr(frame, 'cards', cards)
         setattr(frame, 'update_ui', True)
         self.Close()
@@ -250,7 +247,6 @@ class Interface(fp.MainFrame):
         self.path = 'fpicon_64.bmp'
         self.icon = wx.Icon(self.path, wx.BITMAP_TYPE_BMP)
         self.SetIcon(self.icon)
-
         self.card = 1
         self.last_card = int()
         self.update_ui = True
@@ -258,7 +254,6 @@ class Interface(fp.MainFrame):
         self.cards_total = 1
         self.random_view = True
         self.font_size = 10
-
         self.cards = read()
 
     def on_update_ui(self, event):
@@ -346,7 +341,6 @@ class Interface(fp.MainFrame):
             if fileDialog.ShowModal() == wx.ID_CANCEL:
                 return
             self.card = 1
-            #exclude_tags = set()
             card_file = fileDialog.GetPath()
             self.cards = set_card(1, 'active')
             self.update_ui = True
@@ -358,7 +352,6 @@ class Interface(fp.MainFrame):
                 return
             card_file = fileDialog.GetPath()
             write_db(self.cards)
-            # write_db(getattr(frame, 'cards'))
             self.next_card()
 
     def on_menu_open(self, event):
@@ -391,7 +384,6 @@ class Interface(fp.MainFrame):
                     "Cannot save current data in file '%s'." % pathname)
 
     def import_and_merge_yaml(self):
-        # global card_file
         global tags
         with wx.FileDialog(self, "Import and merge a YAML card file...", wildcard="YAML files (*.yaml)|*.yaml",
                            style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST) as fileDialog:
@@ -400,17 +392,13 @@ class Interface(fp.MainFrame):
             card_file = fileDialog.GetPath()
             try:
                 cards_temp = self.cards
-                # REFACTOR READ() TO ALLOW IT TO WORK HERE...........
                 card_path = ''
                 if os.path.exists(card_file):
                     card_path = Path.cwd() / card_file
                 if os.path.isfile(card_path):
                     with open(card_path, 'r') as f:
-                        # cards = yaml.load(f)
                         imported_cards = yaml.load(f, Loader=yaml.SafeLoader)
                 else:
-                    # BETTER A MESSAGE....................
-                    # AND RESETTING CARDS SHOULD NOT BE NECESSARY......
                     cards = set_card(1, 'active')
                 # Imported card keys must be changed so they do not match.
                 card_values = []
