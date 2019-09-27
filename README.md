@@ -43,7 +43,7 @@ Links and a bit more about Jeffrey Willits are available at [jnwillits.com](http
 
 ## Installation
 
-Only one file is needed to use this application. Simply download the Windows executable [fp.exe](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp.exe?raw=true) and run the program. As an alternative, you can compile the Python source code [fp.py](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/fp.py) with dependencies defined in [requirement.txt](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/requirements.txt).
+Only one file is needed to use this application. Simply download the Windows executable [fp.exe](https://github.com/jnwillits/The-Flashcard-Project/releases/download/fc.exe) and run the program. As an alternative, you can compile the Python source code [fp.py](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/fp.py) with dependencies defined in [requirement.txt](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/requirements.txt).
 
 
 ## Using the Application
