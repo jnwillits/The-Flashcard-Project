@@ -18,7 +18,7 @@ Cards can be categorized with tags and you can save your card decks.
 
 ## About the Author
 
-Links and a bit more about Jeffrey Willits are available at [jnwillits.com](https://jnwillits.com/).
+Links and more about Jeffrey Willits are available at [jnwillits.com](https://jnwillits.com/).
 
 ## With The Flashcard Project you can…
 
@@ -43,14 +43,16 @@ Links and a bit more about Jeffrey Willits are available at [jnwillits.com](http
 
 ## Installation
 
-Only one file is needed to use this application. Simply download the Windows executable file (fp.exe) from [GitHub Releases](https://github.com/jnwillits/The-Flashcard-Project/releases) and run the program. As an alternative, you can compile the Python source code [fp.py](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/fp.py) with dependencies defined in [requirement.txt](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/requirements.txt).
+Only one file is needed to use this application. Simply download the Windows executable (fp.exe) from [GitHub Releases](https://github.com/jnwillits/The-Flashcard-Project/releases) and run the program. You can get The Flashcard Project's learning flashcards for Python (fp-python.db) from [GitHub Releases](https://github.com/jnwillits/The-Flashcard-Project/releases) as well.  
+
+As an alternative, you can compile the Python source code [fp.py](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/fp.py) with dependencies defined in [requirement.txt](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/requirements.txt).
 
 
 ## Using the Application
 
 Basic instructions are available under the program’s Help menu.
 
-You can edit, add, and delete cards while you are studying. If there is a card you do not want to see again, click the “Archive” button. The deck can be reset at any time to reactivate the status of archived cards. Otherwise, the deck will be automatically reset once all cards are viewed.
+You can edit, add, and delete cards while you are studying. If there is a card you do not want to see again, click the Archive button. The deck can be reset at any time to reactivate the status of archived cards. Otherwise, the deck will be automatically reset once all cards are viewed.
 
 The Flashcard Project provides a way for multiple people to contribute when generating a card deck. To share a deck, the card data can be exported to a human-readable YAML file. The file can be shared and imported by someone else to add the cards to their deck. 
 
