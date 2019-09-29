@@ -18,7 +18,7 @@ import wx.richtext
 class MainFrame ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"The Flashcard Project", pos = wx.DefaultPosition, size = wx.Size( 800,500 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"The Flashcard Project", pos = wx.DefaultPosition, size = wx.Size( 1250,625 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -607,28 +607,24 @@ class Dialog_delete_tags ( wx.Dialog ):
 class Dialog_font_size ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Card text size (9 - 18)...", pos = wx.DefaultPosition, size = wx.Size( 202,136 ), style = wx.DEFAULT_DIALOG_STYLE )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Card text size...", pos = wx.DefaultPosition, size = wx.Size( 218,144 ), style = wx.DEFAULT_DIALOG_STYLE )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
 		bSizer7 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_panel2 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		bSizer24 = wx.BoxSizer( wx.HORIZONTAL )
+		bSizer241 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.staticText_font_size = wx.StaticText( self.m_panel2, wx.ID_ANY, u"Font Point Size:", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.staticText_font_size.Wrap( -1 )
+		self.staticText_font_size1 = wx.StaticText( self, wx.ID_ANY, u"Font Point Size:", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.staticText_font_size1.Wrap( -1 )
 
-		bSizer24.Add( self.staticText_font_size, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
+		bSizer241.Add( self.staticText_font_size1, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 10 )
 
-		self.textCtrl_font_size = wx.TextCtrl( self.m_panel2, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
-		bSizer24.Add( self.textCtrl_font_size, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 0 )
+		self.spinCtrl_font_size = wx.SpinCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.SP_ARROW_KEYS, 9, 28, 14 )
+		bSizer241.Add( self.spinCtrl_font_size, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
-		self.m_panel2.SetSizer( bSizer24 )
-		self.m_panel2.Layout()
-		bSizer24.Fit( self.m_panel2 )
-		bSizer7.Add( self.m_panel2, 1, wx.EXPAND|wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+		bSizer7.Add( bSizer241, 1, wx.EXPAND|wx.ALIGN_CENTER_HORIZONTAL, 10 )
 
 		self.button_font_size = wx.Button( self, wx.ID_ANY, u"Close", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer7.Add( self.button_font_size, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )

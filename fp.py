@@ -27,6 +27,7 @@ exclude_tags = set()
 
 
 def add_zeros(card):
+    """ This adds leading zeros to the card number display. """
     return str(['000' if card < 100 else '00'][0]) + str(card)[-5:]
 
 
@@ -183,17 +184,10 @@ class CardAppearance(fp.Dialog_font_size):
         fp.Dialog_font_size.__init__(self, parent)
 
     def on_button_close(self, event):
-        font_sizes = ['9', '10', '11', '12',
-                      '13', '14', '15', '16', '17', '18']
-        try:
-            font_size = self.textCtrl_font_size.GetValue()
-            assert font_size.isalnum() and font_size in font_sizes
-        except AssertionError:
-            wx.MessageBox('Enter numbers between 9 and 18.')
-        else:
-            self.Close()
+        font_size = self.spinCtrl_font_size.GetValue()
         setattr(frame, 'font_size', int(font_size))
         setattr(frame, 'update_ui', True)
+        self.Close()
 
 
 class SequenceSetup(fp.Dialog_view_order):
@@ -208,7 +202,6 @@ class SequenceSetup(fp.Dialog_view_order):
         setattr(frame, 'random_view', False)
         self.checkBox_random.SetValue(False)
         setattr(frame, 'card', 0)
-        # frame.next_card()
 
     def on_button_sequence_set(self, event):
         self.Close()
@@ -254,7 +247,7 @@ class Interface(fp.MainFrame):
         self.cards = set_card(1, 'active')
         self.cards_total = 1
         self.random_view = True
-        self.font_size = 10
+        self.font_size = 14
         self.cards = read()
 
     def on_update_ui(self, event):
@@ -329,7 +322,9 @@ class Interface(fp.MainFrame):
 
     def on_button_save(self, event):
         self.cards[self.card][1] = self.richText_front.GetValue()
-        self.cards[self.card][2] = self.richText_back.GetValue()
+        # If no answer is displayed, only save the unedited answer.
+        if len(self.richText_back.GetValue()) > 1:
+            self.cards[self.card][2] = self.richText_back.GetValue()
         self.cards_total = get_cards_total(self.cards)
         write_db(self.cards)
         setattr(frame, 'update_ui', True)
@@ -422,7 +417,6 @@ class Interface(fp.MainFrame):
                     tags = tags.union(self.cards[key][3])
             except IOError:
                 wx.LogError("Cannot open file '%s'." % newfile)
-            # NECESSARY?.....................
             self.next_card()
 
     def on_menu_export_yaml(self, event):
