@@ -62,7 +62,7 @@ Use the application to help with learning for any subject. If you are an instruc
 ## Contributing
 It would be great to receive contributions to the code and documentation so pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-In addition to the software, The Flashcard Project is a curated deck of Python learning flashcards that were generated and are updated with the application. You are welome to contribute to this. The file is [fp-python.db](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp-python.db?raw=true) and is kept in The Flashcard Project repository.
+In addition to the software, The Flashcard Project is a curated deck of Python learning flashcards that were generated with the application. You are welome to contribute to this. The file is [fp-python.db](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp-python.db?raw=true) and is kept in The Flashcard Project repository.
 
 To submit flashcard content for Python learning, use the application to export your cards as YAML files. If any of these cards should replace existing cards, you can make a note directly on the cards in uppercase. Any notes will be deleted when your cards are consolidated into the master database.
 
