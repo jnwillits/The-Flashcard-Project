@@ -22,6 +22,7 @@
 
 ![The Flashcard Project Main Screen](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-screen_1280x640.png?raw=true)
 
+<br/>
 
 The size-adjustable Windows interface makes it easy to have other applications and study references displayed. This can be useful when studying a computer language so you can switch to a code editor or interpreter for testing and practice.
 
