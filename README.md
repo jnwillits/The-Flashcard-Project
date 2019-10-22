@@ -1,25 +1,3 @@
-# The Flashcard Project
-
-The Flashcard Project is a Windows application that simplifies making, managing, and studying learning flashcards on a desktop. The software is written in Python.
-
-
-![The Flashcard Project Main Screen](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-screen_1280x640.png?raw=true)
-
-## About the Software
-
-This features a native Windows GUI interface so the frame is size-adjustable, making it easy to have other applications and study references displayed. This can be useful when studying a computer language so you can switch to a code editor or interpreter for testing and practice.
-
-While other flashcard applications provide extended features, The Flashcard Project offers a simple system that allows content sharing and merging. The files can be shared for use by anyone with the software.
-
-Cards can be categorized with tags and you can save your card decks.
-
-![The Flashcard Project Main Screen](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-tags.png?raw=true)
-
-
-## About the Author
-
-Links and more about Jeffrey Willits are available at [jnwillits.com](https://jnwillits.com/).
-
 ## With The Flashcard Project you can…
 
 •	Edit cards on the same screen as they are displayed.
@@ -40,13 +18,46 @@ Links and more about Jeffrey Willits are available at [jnwillits.com](https://jn
 
 •	Reset the deck so all archived and excluded cards are shown.
 
+<br/>
+
+![The Flashcard Project Main Screen](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-screen_1280x640.png?raw=true)
+
+
+The size-adjustable Windows interface makes it easy to have other applications and study references displayed. This can be useful when studying a computer language so you can switch to a code editor or interpreter for testing and practice.
+
+While other flashcard applications provide extended features, The Flashcard Project offers a simple system that allows content sharing and merging. Because it is simple, the documentation is not lengthly.
+
+There are quality open source flashcard programs with more extensive features such as [**Anki**](https://apps.ankiweb.net/) and [**Mnemosyne Project**](https://mnemosyne-proj.org/). Use The Flashcard Project if you want something simplier on a Windows system. 
+<br/>
+
+## Open Source Flashcard Software Comparisons
+
+|              	                                        | **Anki** 	                       | **Mnemosyne Project**                 | **The Flashcard Project**     |
+|----------------------------------------	            |-----------------------	   |-----------------------	           |---------------------------|
+|<span style="color:red">**Content**</span>       	    | text and rich media    	   | text and rich media    	       | text only                 |
+|<span style="color:red">**Installation**</span> 	    | 280 MB / 800+ files    	   | 246 MB / 3000+ files    	       | 10,961 KB / one file      |
+|<span style="color:red">**Platforms**</span>        	| Windows, Linux, Mac, Android | Windows, Linux, Mac, Android      | Windows              	   |
+|<span style="color:red">**File Imports**</span>     	| plain text, csv    	       | Anki, SuperMemo, CueCard	       | FP YAML format            |
+|<span style="color:red">**File Exports**</span> 	    | plain text files     	       | text files (tab separated)        | FP YAML format (1)        |
+|<span style="color:red">**Card Tagging**</span> 	    | yes - multiple       	       | yes - multiple                    | yes - multiple       	   |
+|<span style="color:red">**Sequence Options**</span>	    | not configurable (2) 	       | random, scheduled (2)             | random or sequential      |
+|<span style="color:red">**Learning Metrics**</span> 	| graphed learning data        | graphed learning data             | basic (card categories)   |
+|<span style="color:red">**Card Categorization**</span>	| "again", "good", "easy"      | 0 - 5 rating scale                | archive option       	   |
+|<span style="color:red">**License**</span>	            | GNU AGPL v3          	       | GPLv2                             | MIT (3)                   |
+
+(1): Imports and exports are in YAML format, which is both human and machine readable. Card files are saved to a binary database file.
+
+(2): Cards are displayed based on algorithms that maximize learning efficiency.
+
+(3): This is the most permissive of the three software licenses listed.
+
+<br/>
 
 ## Installation
 
-Only one file is needed to use this application. Simply download the Windows executable (fp.exe) from [GitHub Releases](https://github.com/jnwillits/The-Flashcard-Project/releases) and run the program. You can get The Flashcard Project's learning flashcards for Python (fp-python.db) from [GitHub Releases](https://github.com/jnwillits/The-Flashcard-Project/releases) as well.  
+Only one file is needed to use this application. Simply download the Windows executable (fp.exe) file from [**GitHub Releases**](https://github.com/jnwillits/The-Flashcard-Project/releases) and run the program.
 
-As an alternative, you can compile the Python source code [fp.py](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/fp.py) with dependencies defined in [requirement.txt](https://raw.githubusercontent.com/jnwillits/The-Flashcard-Project/master/requirements.txt).
-
+If you want a deck of learning flashcards for Python, download the file "fp-python.db" from the same page.
 
 ## Using the Application
 
@@ -62,12 +73,17 @@ Use the application to help with learning for any subject. If you are an instruc
 ## Contributing
 It would be great to receive contributions to the code and documentation so pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-In addition to the software, The Flashcard Project is a curated deck of Python learning flashcards that were generated with the application. You are welome to contribute to this. The file is [fp-python.db](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp-python.db?raw=true) and is kept in The Flashcard Project repository.
+In addition to the software, The Flashcard Project is a curated deck of Python learning flashcards that were generated with the application. You are welome to contribute to this. The file is [**fp-python.db**](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp-python.db?raw=true) and is kept in The Flashcard Project repository.
 
 To submit flashcard content for Python learning, use the application to export your cards as YAML files. If any of these cards should replace existing cards, you can make a note directly on the cards in uppercase. Any notes will be deleted when your cards are consolidated into the master database.
 
 Most of the cards should include example code for answers. Often a line of code is all that is needed. Using a python CLI makes it easy to distinguish output from code at every step. Please follow the existing format and include tags to categorize the cards.
- 
+
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[**MIT**](https://choosealicense.com/licenses/mit/)
+
+
+## About the Author
+
+Links and more about Jeffrey Willits are available at [**jnwillits.com**](https://jnwillits.com/).
