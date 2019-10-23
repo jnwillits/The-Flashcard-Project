@@ -65,7 +65,7 @@ You can also download it directly here:
 
 If you want a deck of learning flashcards for Python, download the file "fp-python.db" from the same page or directly here:
 
-[**fp-python.db**](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp-python.db?raw=true)
+[**fp-python.db**](https://github.com/jnwillits/The-Flashcard-Project/releases/download/1.04/fp-python.db)
 
 <br/>
 
