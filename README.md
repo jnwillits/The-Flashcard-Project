@@ -29,6 +29,7 @@ The size-adjustable Windows interface makes it easy to have other applications a
 While other flashcard applications provide extended features, The Flashcard Project offers a simple system that allows content sharing and merging. Because it is simple, the documentation is not lengthly.
 
 There are quality open source flashcard programs with more extensive features such as [**Anki**](https://apps.ankiweb.net/) and [**Mnemosyne Project**](https://mnemosyne-proj.org/). Use The Flashcard Project if you want something simplier on a Windows system. 
+
 <br/>
 
 ## Open Source Flashcard Software Comparisons
@@ -78,6 +79,7 @@ The Flashcard Project provides a way for multiple people to contribute when gene
 
 Use the application to help with learning for any subject. If you are an instructor, your students could be tasked with producing their own flashcards and submiting them as card files. Their cards can then be consolidated into a single deck that is a useful learning asset for all of your students. 
 
+<br/>
 
 ## Contributing
 It would be great to receive contributions to the code and documentation so pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -86,10 +88,12 @@ In addition to the software, The Flashcard Project is a curated deck of Python l
 
 Most Python learning cards should include example code for answers. Often a line of code is all that is needed. Using a python CLI makes it easy to distinguish the output from the code at every step. Please follow the existing format and include tags to categorize the cards.
 
+<br/>
 
 ## License
 [**MIT**](https://choosealicense.com/licenses/mit/)
 
+<br/>
 
 ## About the Author
 
