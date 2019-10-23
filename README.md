@@ -1,4 +1,4 @@
-![The Flashcard Project on a Desktop](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-screen_1280x640.png?raw=true)
+![The Flashcard Project on a Desktop](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-jeff.png?raw=true)
 
 <br/>
 
