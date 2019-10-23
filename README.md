@@ -1,3 +1,7 @@
+![The Flashcard Project on a Desktop](https://github.com/jnwillits/The-Flashcard-Project/blob/master/images-reference/fp-screen_1280x640.png?raw=true)
+
+<br/>
+
 ## With The Flashcard Project you can…
 
 •	Edit cards on the same screen as they are displayed.
