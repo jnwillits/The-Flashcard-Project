@@ -61,7 +61,7 @@ Only one file is needed to use this application. Simply download the Windows exe
 
 You can also download it directly here:
 
-[**fp.exe**](https://github.com/jnwillits/The-Flashcard-Project/blob/master/fp.exe?raw=true)
+[**fp.exe**](https://github.com/jnwillits/The-Flashcard-Project/releases/download/1.04/fp.exe)
 
 If you want a deck of learning flashcards for Python, download the file "fp-python.db" from the same page or directly here:
 
