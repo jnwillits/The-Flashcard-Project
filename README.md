@@ -30,9 +30,9 @@
 
 The size-adjustable Windows interface makes it easy to have other applications and study references displayed. This can be useful when studying a computer language so you can switch to a code editor or interpreter for testing and practice.
 
-While other flashcard applications provide extended features, The Flashcard Project offers a simple system that allows content sharing and merging. Because it is simple, the documentation is not lengthly.
+While other flashcard applications provide extended features, The Flashcard Project offers a simple system that allows content sharing and merging. Because it is simple, the documentation is not lengthy.
 
-There are quality open source flashcard programs with more extensive features such as [**Anki**](https://apps.ankiweb.net/) and [**Mnemosyne Project**](https://mnemosyne-proj.org/). Use The Flashcard Project if you want something simplier on a Windows system. 
+There are quality open source flashcard programs with more extensive features such as [**Anki**](https://apps.ankiweb.net/) and [**Mnemosyne Project**](https://mnemosyne-proj.org/). Use The Flashcard Project if you want something simpler on a Windows system.
 
 <br/>
 
@@ -79,16 +79,16 @@ Basic instructions are available under the program’s Help menu.
 
 You can edit, add, and delete cards while you are studying. If there is a card you do not want to see again, click the Archive button. The deck can be reset at any time to reactivate the status of archived cards. Otherwise, the deck will be automatically reset once all cards are viewed.
 
-The Flashcard Project provides a way for multiple people to contribute when generating a card deck. To share a deck, the card data can be exported to a human-readable YAML file. The file can be shared and imported by someone else to add the cards to their deck. 
+The Flashcard Project provides a way for multiple people to contribute when generating a card deck. To share a deck, the card data can be exported to a human-readable YAML file. The file can be shared and imported by someone else to add the cards to their deck.
 
-Use the application to help with learning for any subject. If you are an instructor, your students could be tasked with producing their own flashcards and submiting them as card files. Their cards can then be consolidated into a single deck that is a useful learning asset for all of your students. 
+Use the application to help with learning for any subject. If you are an instructor, your students could be tasked with producing their own flashcards and submitting them as card files. Their cards can then be consolidated into a single deck that is a useful learning asset for all of your students.
 
 <br/>
 
 ## Contributing
 It would be great to receive contributions to the code and documentation so pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-In addition to the software, The Flashcard Project is a curated deck of Python learning flashcards that were generated with the application. You are welome to contribute to this card deck. To submit flashcard content for Python learning, use the application to export your cards as YAML files. If any of these cards should replace existing cards, you can make a note directly on the cards in uppercase. Any notes will be deleted when your cards are consolidated into the master database.
+In addition to the software, The Flashcard Project is a curated deck of Python learning flashcards that were generated with the application. You are welcome to contribute to this card deck. To submit flashcard content for Python learning, use the application to export your cards as YAML files. If any of these cards should replace existing cards, you can make a note directly on the cards in uppercase. Any notes will be deleted when your cards are consolidated into the master database.
 
 Most Python learning cards should include example code for answers. Often a line of code is all that is needed. Using a python CLI makes it easy to distinguish the output from the code at every step. Please follow the existing format and include tags to categorize the cards.
 
